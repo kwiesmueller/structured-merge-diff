@@ -54,7 +54,7 @@ func (s *Updater) update(oldObject, newObject *typed.TypedValue, version fieldpa
 	}
 
 	for manager, managerSet := range managers {
-		if manager == workflow {
+		if manager == workflow || manager == "{}" {
 			continue
 		}
 		compare, ok := versions[managerSet.APIVersion()]
